@@ -18,6 +18,7 @@
         // pegando os campos do formulário
         var fnome = jQuery("#fnome").val();
         var ftelefone = jQuery("#ftelefone").val();
+        var fmensagem = jQuery("#fmensagem").val();
          
         // tipo dos dados, url do documento, tipo de dados, campos enviados     
         // para GET mude o type para GET  
@@ -25,27 +26,19 @@
         type: "POST",
         url: "../php/enviarEmail.php",
         dataType: "html",
-        data: "&fnome=" + fnome + "&ftelefone=" + ftelefone,
+        data: "&fnome=" + fnome + "&ftelefone=" + ftelefone + "&fmensagem=" + fmensagem,
          
         // enviado com sucesso
         success: function(response){
 
-            $("#sucesso-envio").fadeIn();
-            setTimeout(function(){
-            	$("#sucesso-envio").fadeOut();
-            },4000);
-            $("#msg-trocar").text("Entraremos em contato em breve")
+            swal("Mensagem Enviada!", "Em breve entraremos em contato", "success");
+            $('#myModal').modal('toggle');            
 
-            $(".form-control").val("");
-
-            },
+        },
         // quando houver erro
         error: function(){
 
-            $("#erro-envio").fadeIn();
-            setTimeout(function(){
-            	$("#erro-envio").fadeOut();
-            },4000);
+            swal("Erro ao enviar a mensagem!", "", "error");     
 
         }
       });        

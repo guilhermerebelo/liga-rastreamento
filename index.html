@@ -20,7 +20,7 @@
 	
  
 
-	<section class="container-fluid"">
+	<section class="container-fluid">
       	<header class="col-md-offset-2 col-md-8 col-md-offset-2">
       		<div class="row">
 	      		<div class="col-md-4 text-center conteudo">
@@ -124,38 +124,60 @@
 			<strong>Erro ao enviar a mensagem, por favor<br> entrar em contato  pelo telefone (48) 991 891 791</strong>
 		</div>		
 	</div>
-	
-	<div class="barra">
-		
-		<div class="container">
-			<div class="col-md-1 ">
-				<i class="fa fa-angle-down icon-abrir-fechar-barra text-center" aria-hidden="true"></i>
-			</div>
-		
-			<form id="dadosFormulario" action="" method="post" class="col-md-7 padding-barra" >
-				<div id="msg-contato">
-					<p id="msg-trocar" class="inicio-txt">Se interessou? Deixe seu contato</p>
-				</div>
-				<div class="text-center" id="f-nome">
-					<input type="text" class="form-control text-left" name="fnome" id="fnome" maxlength="50" placeholder="Nome" required>
-				</div>
-				<div class="text-center" id="f-telefone">
-					<input type="text" class="form-control text-left" name="ftelefone" id="ftelefone" maxlength="11"  placeholder="Telefone" required>
-				</div>
-				<div class="text-center" id="f-btn">
-					<input class="btn btn-success" id="fBotao" type="submit" value="Enviar">
-				</div>
-			</form>
 
-			<div class="col-md-4 text-right fonte padding-barra" >
-				<span class="margin-right-30 barra-text font-telefone-barra">				
-					 <a href=""> <i class="fa fa-facebook fa-1x"> </i> </a>
-				</span>
-				<span class="margin-right-30 barra-text font-telefone-barra">
-					<i class="fa fa-whatsapp fa-1x"> </i> (48) 991 891 791
-				</span>
+
+
+	<!-- Modal -->
+	<div id="myModal" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+
+	    <!-- Modal content-->
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        <h4 class="modal-title text-center uppercase">Entre em contato com a gente</h4>
+	        <h5 class="modal-title text-center uppercase">Teremos prazer em atendê-lo! :)</h5>
+	      </div>
+	      <div class="modal-body">
+	      	<div style="padding-left: 10%;padding-right: 10%">
+	      		<form class="dadosFormulario" action="" method="post">
+			      	<div class="form-group">
+						<label>Nome</label>
+					    <input id="fnome" type="text" class="form-control" maxlength="80">
+					</div>
+					<div class="form-group">
+						<label>Telefone</label>
+					    <input id="ftelefone" type="text" class="form-control" >
+					</div>  
+					<div class="form-group">
+						<label>Recado</label>
+					    <textarea id="fmensagem" class="form-control" maxlength="300"></textarea>
+					</div> 
+				</form>
+				<div id="fBotao" class="btn btn-success">Enviar</div>
 			</div>
-		</div>
+			<br>
+			<h5 class="text-center"> mensagem enviada para <strong>contato@ligarastreamento.com.br</strong></h5>
+			<br><br>
+
+	      </div>
+	    </div>
+
+	  </div>
+	</div>
+	<!-- MODAL-->
+	
+	
+	<div class="social-link">
+		<div class="itens-social itens-social-message cursor-pointer" data-toggle="modal" data-target="#myModal"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
+		<a target="_blank" href="https://www.facebook.com/Liga-Tecnologia-Rastreamento-1902032640121564/?ref=br_rs">
+			<div class="itens-social itens-social-facebook cursor-pointer">				
+				<i class="fa fa-facebook-official" aria-hidden="true"></i>				
+			</div>
+		</a>
+		<div id="toltipe" class="itens-social itens-social-whatssapp cursor-pointer red-tooltip" data-toggle="tooltip" data-placement="right" title="" data-original-title="<h4>(48)&nbsp991&nbsp891&nbsp791</h4>" data-placement="right"><i class="fa fa-whatsapp" aria-hidden="true"></i></div>a
+
+		
 	</div>
 
 
@@ -167,39 +189,14 @@
     <!-- links js -->
     <script type="text/javascript" src="js/js.js"></script>
     <script type="text/javascript" src="js/enviarEmail.js"></script>
+    <script type="text/javascript" src="js/jquery-mask.js"></script>
+    <script type="text/javascript" src="js/sweetalert.js"></script>
+    <script type="text/javascript" src="js/mascara.js"></script>
 
-
-    <script type="text/javascript">
-
-
-
-    	const mq = window.matchMedia( "(min-width: 992px)" );
-    	
-    	function abrirFechar(){
-    		if (mq.matches){ // acima de 992px
-	    		if ( $(".barra").css("bottom") == "0px"){
-	    			$(".barra").css("bottom","-68px");    			
-	    		} else{
-	    			$(".barra").css("bottom","0px");    			
-	    		}
-    		} else{ // abaixo de 992px
-    			if ( $(".barra").css("bottom") == "0px"){
-	    			$(".barra").css("bottom","-120px");    			
-	    		} else{
-	    			$(".barra").css("bottom","0px");    			
-	    		}
-    		}
-    		
-    	}
-    
-    	$(".icon-abrir-fechar-barra").click(function(){
-    		$(this).toggleClass("efeito-cima");
-    		abrirFechar();    		
-    	});
-    	$("#fBotao").click(function(){
-    		abrirFechar();
-    	});		
+	<script type="text/javascript">
+		$('#toltipe').tooltip({
+			html:true
+		});
 	</script>
-
   </body>
 </html>

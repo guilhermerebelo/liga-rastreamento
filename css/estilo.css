@@ -6,6 +6,10 @@
 	word-wrap: break-word;
 }
 
+/*tooltip*/
+.red-tooltip + .tooltip > .tooltip-inner, .red-tooltip + .tooltip > .tooltip-arrow {background-color: #25D366;}
+/*tooltip*/
+
 
 body{
 	background: #273037;
@@ -30,6 +34,12 @@ header{
 }
 ul{
 	margin-top: 30px;
+}
+textarea{
+	height: 100px !important;
+}
+.cursor-pointer{
+	cursor: pointer;
 }
 .font-50px{
 	font-size: 46px;
@@ -140,16 +150,40 @@ a:focus{
 }
 /* footer*/
 
+/* barra lateral */
+.social-link{
+	position: fixed;
+	left: 0;
+	top:50%;
+	transform: translate(0%, -50%);
+	vertical-align: middle;
+}
+.itens-social{
+	padding: 15px;
+	background-color: silver;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 26px;
+	border-radius-top: 5px;
+}
+.itens-social-message{
+	/*criar um hover*/
+}
+.itens-social-facebook{
+	color: white;
+	background-color: #3b5998;
+}
+.itens-social-whatssapp{
+	color: white;
+	background-color: #25D366;
+}
+/* barra lateral */
+
 /*formulario enviar dados*/
 
-#msg-contato{
-	position: absolute;
-	top: -50px;
-	background-color: white;
-	color: #273039;
-	border-radius: 4px;
-	padding: 12px 12px 0 12px;
-}
+
 #enviar-mensagem{
 	height: 60px;
 	position: fixed;
