@@ -3,12 +3,14 @@
 $para = "contato@ligarastreamento.com.br";
 $fnome = $_POST['fnome'];
 $ftelefone = $_POST['ftelefone'];
+$fmensagem = $_POST['fmensagem'];
 $data_envio = date('d/m/Y');
 $hora_envio = date('H:i:s');
 
 $corpo = "
 Nome: $fnome
 Telefone: $ftelefone
+Mensagem: $fmensagem
 Dia: $data_envio
 Hora: $hora_envio
 
